@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProductViewModel;
+@model Movie;
+@{
+
+    <div>
+        <form asp-action="Operation" asp-controller="Home" method="post">
+            <label asp-for="product.name">Product Name</label>
+            <input type="text" asp-for="product.name" />
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Product Name:-</th>
+        </tr>
+        @foreach (var product in Model.productList)
+        {
+            <tr>
+                <td>@product.name</td>
+            </tr>
+        }
+    </table>
+
+    <label asp-for="movie.Title"></label>
+
+
+    @*@Html.LabelFor(x => x.name)
+        @Html.TextBoxFor(x => x.name)*@
+
+    <!--<form asp-controller="Home" asp-action="Operation" method="post">
+
+        <input asp-for="name" /><br />
+
+
+        Name:- <input type="text" asp-for="name" />
+
+
+        submit:- <input type="button" name="submit" value="Submit" asp-for="name" height="200px" width="400px" />-->
+    @*//<button type="button" bs-button-color="danger"*@
+    <!--</form>-->
+
+}
